@@ -14,8 +14,8 @@ install_requires = [
     ],
 
 tests_require = [
-    'nose',
     'coverage',
+    'nose',
     ]
 
 setup(name='ddsc-incron',
@@ -37,5 +37,6 @@ setup(name='ddsc-incron',
       extras_require={'test': tests_require},
       entry_points={
           'console_scripts': [
+              'notify = ddsc_incron.notify:main',
           ]},
       )
