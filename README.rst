@@ -12,14 +12,6 @@ Post-nensskel setup TODO
 Here are some instructions on what to do after you've created the project with
 nensskel.
 
-- Fill in a short description on https://github.com/lizardsystem/ddsc-incron or
-  https://github.com/nens/ddsc-incron if you haven't done so already.
-
-- Use the same description in the ``setup.py``'s "description" field.
-
-- Fill in your username and email address in the ``setup.py``, see the
-  ``TODO`` fields.
-
 - Check https://github.com/nens/ddsc-incron/settings/collaboration if the team
   "Nelen & Schuurmans" has access.
 
