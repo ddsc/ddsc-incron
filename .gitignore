@@ -37,5 +37,6 @@ src
 etc/*.nginx.conf
 etc/*.logrotate
 
-# Celery config file
+# Local config files
 ddsc_incron/celeryconfig.py
+ddsc_incron/localsettings.py
