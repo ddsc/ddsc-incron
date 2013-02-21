@@ -2,7 +2,9 @@
 # See: http://docs.python.org/2/howto/logging-cookbook.html
 # #logging-to-a-single-file-from-multiple-processes
 # This very much applies to ddsc-incron!
-# TODO: ConcurrentLogHandler on pypi?
+
+# TODO: Consider ConcurrentLogHandler on pypi when this bug is solved?
+# https://bugzilla.redhat.com/show_bug.cgi?id=858912
 
 LOGGING = {
     'version': 1,
@@ -25,7 +27,6 @@ LOGGING = {
         '': {
             'handlers': ['null'],
             'level': 'DEBUG',
-            'propagate': True,
         },
     }
 }
