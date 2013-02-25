@@ -31,15 +31,14 @@ LOGGING = {
         },
         'rmq': {
             'class': 'ddsc_logging.handlers.DDSCHandler',
-            'formatter': 'verbose',
-            'level': 'DEBUG',
+            'level': 'INFO',
             'broker_url': BROKER_URL,
         },
     },
     'loggers': {
         '': {
             'handlers': ['null'],
-            'level': 'DEBUG',
+            'level': 'INFO',
         },
     },
 }
