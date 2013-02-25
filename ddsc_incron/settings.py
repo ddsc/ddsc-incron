@@ -1,3 +1,7 @@
+from __future__ import absolute_import
+
+from ddsc_incron.celery import celery
+
 # Note that logging to a single file from multiple processes is NOT supported.
 # See: http://docs.python.org/2/howto/logging-cookbook.html
 # #logging-to-a-single-file-from-multiple-processes
@@ -6,11 +10,14 @@
 # TODO: Consider ConcurrentLogHandler on pypi when this bug is solved?
 # https://bugzilla.redhat.com/show_bug.cgi?id=858912
 
+
+BROKER_URL = celery.conf['BROKER_URL']
+
 LOGGING = {
     'version': 1,
     'formatters': {
         'verbose': {
-            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s',
         },
     },
     'handlers': {
@@ -22,13 +29,19 @@ LOGGING = {
         'null': {
             'class': 'logging.NullHandler',
         },
+        'rmq': {
+            'class': 'ddsc_logging.handlers.DDSCHandler',
+            'formatter': 'verbose',
+            'level': 'DEBUG',
+            'broker_url': BROKER_URL,
+        },
     },
     'loggers': {
         '': {
             'handlers': ['null'],
             'level': 'DEBUG',
         },
-    }
+    },
 }
 
 try:
