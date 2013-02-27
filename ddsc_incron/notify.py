@@ -14,7 +14,7 @@ def main():
     logger.info("New file to import: {0}".format(
         os.path.join(sys.argv[1], sys.argv[2]))
     )
-    celery.send_task("ddsc_worker.importer.new_file_detected",
+    celery.send_task("ddsc_worker.tasks.new_file_detected",
         kwargs={'pathDir': (sys.argv[1] + '/'), 'fileName': sys.argv[2]}
     )
 
