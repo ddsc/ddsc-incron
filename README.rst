@@ -1,23 +1,4 @@
 ddsc-incron
-==========================================
+===========
 
-Introduction
-
-Usage, etc.
-
-
-Post-nensskel setup TODO
-------------------------
-
-Here are some instructions on what to do after you've created the project with
-nensskel.
-
-- Add a new jenkins job at
-  http://buildbot.lizardsystem.nl/jenkins/view/djangoapps/newJob or
-  http://buildbot.lizardsystem.nl/jenkins/view/libraries/newJob . Job name
-  should be "ddsc-incron", make the project a copy of the existing "lizard-wms"
-  project (for django apps) or "nensskel" (for libraries). On the next page,
-  change the "github project" to ``https://github.com/nens/ddsc-incron/`` and
-  "repository url" fields to ``git@github.com:nens/ddsc-incron.git`` (you might
-  need to replace "nens" with "lizardsystem"). The rest of the settings should
-  be OK.
+One of the options to import data within DDSC is via SFTP. Once a new file has been uploaded, it needs to be processed and stored immediately. The inotify cron system is used to watch directories and run Python code (see `notify.py <https://github.com/ddsc/ddsc-incron/blob/master/ddsc_incron/notify.py>`_) after every new file upload.
